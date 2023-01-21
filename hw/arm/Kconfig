@@ -84,6 +84,10 @@ config INTEGRATOR
     select PL181 # display
     select SMC91C111
 
+config LEGO_SPIKE
+    bool
+    select STM32F413_SOC
+
 config MAINSTONE
     bool
     select PXA2XX
@@ -359,6 +363,13 @@ config STM32F205_SOC
     select STM32F2XX_SPI
 
 config STM32F405_SOC
+    bool
+    select ARM_V7M
+    select OR_IRQ
+    select STM32F4XX_SYSCFG
+    select STM32F4XX_EXTI
+
+config STM32F413_SOC
     bool
     select ARM_V7M
     select OR_IRQ
